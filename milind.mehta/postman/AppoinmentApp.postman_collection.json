@@ -1,0 +1,1548 @@
+{
+	"info": {
+		"_postman_id": "b5fba329-7e75-498c-9844-064bd5e9f59a",
+		"name": "AppoinmentApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5548630"
+	},
+	"item": [
+		{
+			"name": "Invalid Create Doctor - Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"M\",\n    \"specification\": \"Physcian\",\n    \"availableTo\": \"08:00\",\n    \"availableFrom\": \"16:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/doctor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"doctor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid Create Doctor - Name",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"M\",\n    \"specification\": \"Physcian\",\n    \"availabilityToTime\": \"08:00\",\n    \"availabilityFromTime\": \"16:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/doctor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:38:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:08:06.459187\",\n    \"message\": \"Invalid Doctor name\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Invalid Create Doctor Specification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"kunjal\",\n    \"specification\": \"Ph\",\n    \"availableTo\": \"08:00\",\n    \"availableFrom\": \"16:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/doctor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"doctor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid Create Doctor Specification",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"kunjal\",\n    \"specification\": \"Ph\",\n    \"availabilityToTime\": \"08:00:00\",\n    \"availabilityFromTime\": \"16:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/doctor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:38:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:08:34.877136\",\n    \"message\": \"Invalid specification\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Invalid Appoinment time - Create Doctor Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Milind\",\n    \"specification\": \"Phyician\",\n    \"availableTo\": \"invalid\",\n    \"availableFrom\": \"32:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/doctor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"doctor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid Appoinment time - Create Doctor Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Milind\",\n    \"specification\": \"Phyician\",\n    \"availabilityToTime\": \"invalid\",\n    \"availabilityFromTime\": \"32:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/doctor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:39:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:09:07.149396\",\n    \"message\": \"Invalid Availability From time\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Invalid appoinment from Create Doctor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"kunjal\",\n    \"specification\": \"Phyician\",\n    \"availableTo\": \"08:00:00\",\n    \"availableFrom\": \"invalid\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/doctor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"doctor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid appoinment from Create Doctor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"kunjal\",\n    \"specification\": \"Phyician\",\n    \"availabilityToTime\": \"08:00:00\",\n    \"availabilityFromTime\": \"invalid\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/doctor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:39:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:09:44.729815\",\n    \"message\": \"Invalid Availability From time\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Doctor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Dr. Dipen Patel\",\n    \"specification\": \"Pedestrian\",\n    \"availableFrom\": \"10:30\",\n    \"availableTo\": \"16:30\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/doctor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"doctor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Doctor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dr. Milind Mehta\",\n    \"specification\": \"Pedestrian\",\n    \"availableTo\": \"10:30\",\n    \"availableFrom\": \"16:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/doctor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:59:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 14,\n    \"name\": \"Dr. Milind Mehta\",\n    \"specification\": \"Pedestrian\",\n    \"availableTo\": \"10:30:00\",\n    \"availableFrom\": \"16:00:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Doctor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/doctor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"doctor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Doctor",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/doctor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:59:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 14,\n        \"name\": \"Dr. Milind Mehta\",\n        \"specification\": \"Pedestrian\",\n        \"availableTo\": \"10:30:00\",\n        \"availableFrom\": \"16:00:00\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Doctor by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/doctor/14",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"doctor",
+						"14"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Doctor by Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/doctor/14",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor",
+								"14"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 07:00:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 14,\n    \"name\": \"Dr. Milind Mehta\",\n    \"specification\": \"Pedestrian\",\n    \"availableTo\": \"10:30:00\",\n    \"availableFrom\": \"16:00:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Invalid Get Doctor by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/doctor/100",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"doctor",
+						"100"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid Get Doctor by Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/doctor/100",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"doctor",
+								"100"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:41:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"NOT_FOUND\",\n    \"timestamp\": \"2022-11-28T12:11:46.226809\",\n    \"message\": \"Doctor not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Appoinment - Invalid Patient name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"ra\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointment\":\"2022-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Appoinment - Invalid Patient name",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"ra\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointmentDateTime\":\"2022-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:42:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:12:17.225319\",\n    \"message\": \"Invalid Patient Name\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Appoinment - invalid email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"test@ab\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointment\":\"2022-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Appoinment - invalid email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"test@ab\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointmentDateTime\":\"2022-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:42:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:12:58.835902\",\n    \"message\": \"Invalid Email\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Appoinment - Invalid Mobile no",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"+9195108\",\n    \"dob\":\"1991-08-09\",\n    \"appointment\":\"2022-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Appoinment - Invalid Mobile no",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"+9195108\",\n    \"dob\":\"1991-08-09\",\n    \"appointmentDateTime\":\"2022-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:43:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:13:22.237617\",\n    \"message\": \"Invalid mobile number\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Appoinment- Invalid DOB Format",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"rahul\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"919510866380\",\n    \"dob\":\"08-09-1991\",\n    \"appointment\":\"2022-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Appoinment- Invalid DOB Format",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"rahul\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"919510866380\",\n    \"dob\":\"08-09-1991\",\n    \"appointmentDateTime\":\"2022-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:44:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:14:09.061569\",\n    \"message\": \"Invalid Date of birth\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Appoinment - Invalid appoinmentdatetime - time not mentioned",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointment\":\"2022-09-08\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Appoinment - Invalid appoinmentdatetime - time not mentioned",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\":\"1\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointmentDateTime\":\"2022-09-08\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:44:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:14:43.646303\",\n    \"message\": \"Invalid appointment Date and Time\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Appoinment - Invalid appoinment past date",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\":\"14\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointment\":\"2021-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Appoinment - Invalid appoinment past date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\":\"14\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointment\":\"2021-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 07:01:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:31:00.54603\",\n    \"message\": \"Doctor is unavailable on given specific time\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Appoinment - Valid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\":\"15\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointment\":\"2023-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Appoinment - Valid",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\":\"15\",\n    \"patientName\":\"Rahul Sharma\",\n    \"emailId\":\"abc@gmail.com\",\n    \"mobileNo\":\"9510866380\",\n    \"dob\":\"1991-08-09\",\n    \"appointment\":\"2023-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 07:13:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"appointmentId\": 16,\n    \"doctorId\": 15,\n    \"patientName\": \"Rahul Sharma\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9510866380\",\n    \"dob\": \"1991-08-09T00:00:00.000+05:30\",\n    \"appointment\": \"2023-09-08T14:15:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Find all Create Appoinment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find all Create Appoinment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 07:13:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"appointmentId\": 16,\n        \"doctorId\": 15,\n        \"patientName\": \"Rahul Sharma\",\n        \"emailId\": \"abc@gmail.com\",\n        \"mobileNo\": \"9510866380\",\n        \"dob\": \"1991-08-09T00:00:00.000+05:30\",\n        \"appointment\": \"2023-09-08T14:15:00\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update Appoinment - Invalid appoinment id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\": \"1\",\n    \"appointmentId\": 3,\n    \"patientName\": \"Dhrumil Shah\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9725499430\",\n    \"dob\": \"1967-07-14\",\n    \"appointment\": \"2023-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Appoinment - Invalid appoinment id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\": \"1\",\n    \"appointmentId\": 3,\n    \"patientName\": \"sharma\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9510866380\",\n    \"dob\": \"1991-08-09\",\n    \"appointmentDateTime\": \"2023-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:48:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:18:08.035593\",\n    \"message\": \"Invalid appointment id \"\n}"
+				},
+				{
+					"name": "Update Appoinment - Invalid appoinment id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\": \"1\",\n    \"appointmentId\": 3,\n    \"patientName\": \"Dhrumil Shah\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9725499430\",\n    \"dob\": \"1967-07-14\",\n    \"appointmentDateTime\": \"2023-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:49:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"BAD_REQUEST\",\n    \"timestamp\": \"2022-11-28T12:19:13.285116\",\n    \"message\": \"Invalid appointment id \"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Appoinment - Invalid Dr ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\": \"1\",\n    \"appointmentId\": 16,\n    \"patientName\": \"Dhrumil Shah\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9725499430\",\n    \"dob\": \"1967-07-14\",\n    \"appointment\": \"2023-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Appoinment - Invalid Dr ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\": \"1\",\n    \"appointmentId\": 13,\n    \"patientName\": \"Dhrumil Shah\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9725499430\",\n    \"dob\": \"1967-07-14\",\n    \"appointmentDateTime\": \"2023-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:50:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"httpStatus\": \"NOT_FOUND\",\n    \"timestamp\": \"2022-11-28T12:20:10.051381\",\n    \"message\": \"Doctor not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Appoinment - Valid",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\": \"15\",\n    \"appointmentId\": 16,\n    \"patientName\": \"Dhrumil Shah\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9725499430\",\n    \"dob\": \"1967-07-14\",\n    \"appointment\": \"2023-09-08T14:15\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/v1/appointment/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"appointment",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Appoinment - Valid",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\": \"12\",\n    \"appointmentId\": 13,\n    \"patientName\": \"Dhrumil Shah\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9725499430\",\n    \"dob\": \"1967-07-14\",\n    \"appointmentDateTime\": \"2023-09-08T14:15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/appointment/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"appointment",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 06:51:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"appointmentId\": 13,\n    \"doctorId\": 12,\n    \"patientName\": \"Dhrumil Shah\",\n    \"emailId\": \"abc@gmail.com\",\n    \"mobileNo\": \"9725499430\",\n    \"dob\": \"1967-07-14T00:00:00.000+05:30\",\n    \"appointmentDateTime\": \"2023-09-08T14:15:00\"\n}"
+				}
+			]
+		}
+	]
+}
