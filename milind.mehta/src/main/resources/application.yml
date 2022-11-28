@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Patient Service
+    name: patient-service
   datasource:
     username: root
     password: root
